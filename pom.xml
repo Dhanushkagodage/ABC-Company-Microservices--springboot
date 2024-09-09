@@ -4,6 +4,12 @@
   <groupId>org.abccompany</groupId>
   <artifactId>ABCCompany</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
   <name>Archetype - ABCCompany</name>
   <url>http://maven.apache.org</url>
+  <modules>
+    <module>order</module>
+    <module>inventory</module>
+    <module>product</module>
+  </modules>
 </project>
