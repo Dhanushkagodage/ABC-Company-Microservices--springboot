@@ -20,23 +20,23 @@ public class InventoryService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public List<InventoryDTO> getALLInventories(){
-        List<Inventory> inventoryList = inventoryRepository.findAll();
-        return modelMapper.map(inventoryList,new TypeToken<List<InventoryDTO>>(){}.getType());
+    public List<InventoryDTO> getALLItems(){
+        List<Inventory> itemList = inventoryRepository.findAll();
+        return modelMapper.map(itemList,new TypeToken<List<InventoryDTO>>(){}.getType());
     }
-    public InventoryDTO getInventory(Integer inventoryId){
-        Inventory inventory = inventoryRepository.getInventoryByID(inventoryId);
-        return modelMapper.map(inventory,InventoryDTO.class);
+    public InventoryDTO getItemById(Integer itemId){
+        Inventory item = inventoryRepository.getInventoryByID(itemId);
+        return modelMapper.map(item,InventoryDTO.class);
     }
-    public InventoryDTO addInventory(InventoryDTO inventoryDTO){
+    public InventoryDTO addItem(InventoryDTO inventoryDTO){
         inventoryRepository.save(modelMapper.map(inventoryDTO,Inventory.class));
         return inventoryDTO;
     }
-    public InventoryDTO updateInventory(InventoryDTO inventoryDTO){
+    public InventoryDTO updateItem(InventoryDTO inventoryDTO){
         inventoryRepository.save(modelMapper.map(inventoryDTO,Inventory.class));
         return inventoryDTO;
     }
-    public String deleteInventory(Integer inventoryId){
+    public String deleteItem(Integer inventoryId){
         inventoryRepository.deleteById(inventoryId);
         return "Inventory " +inventoryId+" is deleted";
     }

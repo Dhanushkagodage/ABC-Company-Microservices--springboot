@@ -15,28 +15,28 @@ public class InventoryController {
     @Autowired
     private InventoryService inventoryService;
 
-    @GetMapping("/getinventories")
-    public List<InventoryDTO> getInventories() {
-        return inventoryService.getALLInventories();
+    @GetMapping("/getitems")
+    public List<InventoryDTO> getItems() {
+        return inventoryService.getALLItems();
     }
 
-    @GetMapping("/getinventory/{inventoryID}")
-    public InventoryDTO getInventory(@PathVariable("inventoryID") Integer inventoryID) {
-        return inventoryService.getInventory(inventoryID);
+    @GetMapping("/getitem/{itemID}")
+    public InventoryDTO getItem(@PathVariable("itemID") Integer itemID) {
+        return inventoryService.getItemById(itemID);
     }
 
-    @PostMapping("/addinventory")
-    public InventoryDTO addInventory(@RequestBody InventoryDTO inventoryDTO) {
-        return inventoryService.addInventory(inventoryDTO);
+    @PostMapping("/additem")
+    public InventoryDTO addItem(@RequestBody InventoryDTO inventoryDTO) {
+        return inventoryService.addItem(inventoryDTO);
     }
 
-    @PutMapping("/updateinventory")
-    public InventoryDTO updateInventory(@RequestBody InventoryDTO inventoryDTO) {
-        return inventoryService.updateInventory(inventoryDTO);
+    @PutMapping("/updateitem")
+    public InventoryDTO updateItem(@RequestBody InventoryDTO inventoryDTO) {
+        return inventoryService.updateItem(inventoryDTO);
     }
 
     @DeleteMapping("/deleteinventory/{inventoryID}")
-    public String deleteInventory(@PathVariable("inventoryID") Integer inventoryID) {
-        return inventoryService.deleteInventory(inventoryID);
+    public String deleteItem(@PathVariable("inventoryID") Integer inventoryID) {
+        return inventoryService.deleteItem(inventoryID);
     }
 }
