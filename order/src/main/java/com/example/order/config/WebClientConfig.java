@@ -15,11 +15,11 @@ public class WebClientConfig {
 
     @Bean
     public WebClient inventoryWebClient() {
-        return webClientBuilder().baseUrl("http://inventory/api/ABC").build();
+        return webClientBuilder().baseUrl("http://apigateway/api/ABC").build();
     }
 
     @Bean
     public WebClient productWebClient() {
-        return webClientBuilder().baseUrl("http://product/api/ABC").build();
+        return webClientBuilder().baseUrl("http://apigateway/api/ABC").build();
     }
 }
