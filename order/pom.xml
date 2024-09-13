@@ -51,6 +51,10 @@
             <version>3.3.3</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.abccompany</groupId>
             <artifactId>inventory</artifactId>
             <version>${project.parent.version}</version>
@@ -58,6 +62,11 @@
         <dependency>
             <groupId>org.abccompany</groupId>
             <artifactId>product</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.abccompany</groupId>
+            <artifactId>base</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
